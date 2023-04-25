@@ -1,13 +1,17 @@
 from pyautogui import *
 import pyautogui
+import os
 from time import sleep
+
+script_dir = os.path.dirname(__file__)
+image_path = os.path.join(script_dir, 'assets', 'accept.png')
 
 def click(x, y):
     pyautogui.moveTo(x, y)
     pyautogui.click(x ,y)
     
 def checkScreen():
-    button_pos = pyautogui.locateOnScreen('./accept.png')
+    button_pos = pyautogui.locateOnScreen(image_path)
 
     if button_pos != None:
         click(button_pos.left, button_pos.top)

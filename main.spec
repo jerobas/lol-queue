@@ -8,7 +8,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('assets/accept.png', '.')],
     hiddenimports=['pyautogui'],
     hookspath=[],
     hooksconfig={},
