@@ -2,8 +2,12 @@ from pyautogui import *
 import pyautogui
 import os
 from time import sleep
+import ssl
 
+context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
 script_dir = os.path.dirname(__file__)
+cert_path = os.path.join(script_dir, 'certs', 'certfile.pem')
+context.load_cert_chain(cert_path)
 image_path = os.path.join(script_dir, 'assets', 'accept.png')
 
 def click(x, y):
