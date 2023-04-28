@@ -11,7 +11,7 @@ def click(x, y):
     pyautogui.click(x ,y)
     
 def checkScreen():
-    button_pos = pyautogui.locateOnScreen(image_path)
+    button_pos = pyautogui.locateOnScreen(image_path, confidence=.5)
 
     if button_pos != None:
         click(button_pos.left, button_pos.top)
